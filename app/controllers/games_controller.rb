@@ -14,13 +14,13 @@ class GamesController < ApplicationController
 
   def show
     # game = Game.find(params[:id])
-    render json: game, status: 201
+    render json: @game, status: 201
   end
 
   def update
     # game = Game.find(params[:id])
-    game.update(game_params)
-    render json: game, status: 201
+    @game.update(game_params)
+    render json: @game, status: 201
   end
 
   private
@@ -30,7 +30,7 @@ class GamesController < ApplicationController
   end
 
   def set_game
-    game = Game.find(params[:id])
+    @game = Game.find(params[:id])
   end
 
 end
