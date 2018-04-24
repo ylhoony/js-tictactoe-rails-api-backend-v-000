@@ -2,8 +2,8 @@ class GamesController < ApplicationController
   # Add your GamesController code here
 
   def index
-    game = Game.all
-    render json: game, status: 201    
+    games = Game.all
+    render json: games, status: 201
   end
 
   def create
@@ -25,7 +25,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.permit(state:[])    
+    params.permit(state:[])
   end
 
 end
